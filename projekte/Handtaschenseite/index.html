@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Elegante Handtaschen für jeden Anlass. Hochwertige und stilvolle Handtaschen von unserem Startup. Jetzt shoppen und die perfekte Tasche finden.">
+    <meta name="keywords" content="Handtaschen, Mode, Leder, Clutch, Umhängetasche, Einkauf, Qualität, Stil">
+    <meta name="author" content="Handtaschen Startup">
+    <title>Handtaschen - Stilvolle Taschen für jeden Anlass</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <!-- Open Graph Tags für Social Media Sharing -->
+    <meta property="og:title" content="Handtaschen Startup - Stilvolle Taschen für jeden Anlass">
+    <meta property="og:description" content="Entdecken Sie unsere elegante Handtaschen-Kollektion. Stilvoll, hochwertig und für jede Gelegenheit perfekt.">
+    <meta property="og:image" content="hero-bag.jpg">
+    <meta property="og:url" content="https://www.handtaschen-startup.com">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Handtaschen Startup - Stilvolle Taschen für jeden Anlass">
+    <meta name="twitter:description" content="Entdecken Sie unsere elegante Handtaschen-Kollektion. Stilvoll, hochwertig und für jede Gelegenheit perfekt.">
+    <title>Handtaschen Startup</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Start</a></li>
+                <li><a href="#products">Produkte</a></li>
+                <li><a href="#contact">Kontakt</a></li> 
+                <li><a href="#newsletter">Newsletter</a></li>
+            </ul>
+        </nav>
+        <div class="hero">
+            <h1>Elegante Handtaschen für jeden Anlass</h1>
+            <p>Stil trifft auf Qualität</p>
+            <a href="#products" class="cta-button">Jetzt einkaufen</a>
+        </div>
+    </header>
+
+
+
+
+    <section id="products">
+        <h2>Unsere "best of" Handtaschen:</h2>
+        <div class="product-grid">
+            <div class="product">
+                <img src="assets/img/Handtasche1.jpg" alt="Handtasche 1">
+                <h3>Elegante Lederhandtasche</h3>
+                <p>Preis: 199,99 €</p>
+            </div>
+            <div class="product">
+                <img src="assets/img/Handtasche2.jpg" alt="Handtasche 2">
+                <h3>Schicke Umhängetasche</h3>
+                <p>Preis: 149,99 €</p>
+            </div>
+            <div class="product">
+                <img src="assets/img/Handtasche3.jpg" alt="Handtasche 3">
+                <h3>Kompakte Clutch</h3>
+                <p>Preis: 79,99 €</p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <div class="slider">
+        <h3 style="text-align: center; color: blueS;">Weitere Handtaschen:</h3>
+        <div class="slides">
+            <div class="slide" style="height: 5px;">
+                <img src="assets/img/Handtasche1.jpg" alt="Bild 1">
+            </div>
+            <div class="slide">
+                <img src="assets/img/Handtasche2.jpg" alt="Bild 2">
+            </div>
+            <div class="slide">
+                <img src="assets/img/Handtasche3.jpg" alt="Bild 3">
+            </div>
+            <div class="slide">
+                <img src="assets/img/Handtasche4.jpg" alt="Bild 4">
+            </div>
+        </div>
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+
+    <div class="dots">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <!-- Füge hir bei weiteren Bildern mehr Punkte ein indem du die obrige Zeile kopierst, einfügst und die Zahl nach currentSlide(###) änderst.-->
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+
+        function showSlide(index) {
+            if (index >= slides.length) {
+                currentIndex = 0;
+            } else if (index < 0) {
+                currentIndex = slides.length - 1;
+            } else {
+                currentIndex = index;
+            }
+
+            const offset = -currentIndex * 100;
+            document.querySelector('.slides').style.transform = `translateX(${offset}%)`;
+
+            dots.forEach((dot, i) => {
+                dot.classList.remove('active');
+                if (i === currentIndex) {
+                    dot.classList.add('active');
+                }
+            });
+        }
+
+        function moveSlide(n) {
+            showSlide(currentIndex + n);
+        }
+
+        function currentSlide(n) {
+            showSlide(n - 1);
+        }
+
+        // Initialer Slide
+        showSlide(currentIndex);
+    </script>
+
+
+
+
+
+
+
+
+    <section id="contact">
+        <h2>Kontaktieren Sie uns</h2>
+        <form action="#" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">E-Mail:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Nachricht:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            
+            <button type="submit">Nachricht senden</button>
+        </form>
+    </section>
+
+    <section id="newsletter">
+        <h2>Newsletter abonnieren</h2>
+        <p>Bleiben Sie informiert über neue Kollektionen und exklusive Angebote!</p>
+        <form id="newsletter-form" action="#" method="post">
+            <label for="newsletter-email">E-Mail-Adresse:</label>
+            <input type="email" id="newsletter-email" name="email" placeholder="Ihre E-Mail" required>
+            <button type="submit">Abonnieren</button>
+        </form>
+    </section>
+    
+
+    <footer>
+        <p>&copy; 2024 Handtaschen Startup | Alle Rechte vorbehalten</p>
+    </footer>
+
+    <script src="assets/js/scripts.js"></script>
+</body>
+</html>
