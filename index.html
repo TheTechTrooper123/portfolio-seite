@@ -9,12 +9,12 @@
     <link rel="stylesheet" href="mediaqueries.css" />
   </head>
   <body>
-    <nav>
-      <div class="logo"><h3>Till Siskos</h3></div>
+    <nav id="desktop-nav">
+      <div class="logo">Till Siskos</div>
       <div>
         <ul class="nav-links">
-          <li><a href="#about">Über mich</a></li>
-          <li><a href="#experience">Erfahrungen</a></li>
+          <li><a href="#about">Über</a></li>
+          <li><a href="#experience">Erfahrung</a></li>
           <li><a href="#projects">Projekte</a></li>
           <li><a href="#contact">Kontakt</a></li>
         </ul>
@@ -29,10 +29,10 @@
           <span></span>
         </div>
         <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+          <li><a href="#about" onclick="toggleMenu()">Über</a></li>
+          <li><a href="#experience" onclick="toggleMenu()">Erfahrung</a></li>
+          <li><a href="#projects" onclick="toggleMenu()">Projekte</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Kontakt</a></li>
         </div>
       </div>
     </nav>
@@ -270,29 +270,6 @@
             class="icon contact-icon email-icon"
           />
           <p><a>till@siskosorg</a></p>
-        </div>
-      </div>
-      <div class="auth">
-        <div class="container">
-          <div class="auth__inner">
-            <div class="auth__media" style=" text-align: center;">
-              <img style="width: 50%; height: auto;" src="https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/opened_gi4n.svg">
-            </div>
-            <div class="auth__auth">
-              <h1 class="auth__title">Contact Form</h1>
-              <p>Fülle die Felder aus</p>
-              <div class="alert">Ihre Nachfricht wird nicht drankommen. (ist eine Atrappe).</div>
-              <form class="form" id="contactform">
-                <label>Name</label>
-                <input type="text" name="name" id="name" placeholder="Ihr Name"required>
-                <label>Email</label>
-                <input type="email" name="email" id='email' placeholder="you@example.com"required>
-                <label>Ihre Nachricht</label>
-                <textarea placeholder="Schreiben sie ihre Nachricht hier" id="textarea"required></textarea>
-                <button type='submit' class="button button__accent">Nachricht senden</button>
-              </form>
-            </div>
-          </div>
         </div>
       </div>
     </section>
